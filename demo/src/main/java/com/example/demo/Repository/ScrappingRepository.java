@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface ScrappingRepository extends JpaRepository<Scrapping,Long> {
 
-   Optional<List<Scrapping>> findByURL(String Url);
+//   Optional<List<Scrapping>> findBySite_Name(String Url);
 
 }
