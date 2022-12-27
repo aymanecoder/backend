@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ScrappingRepository extends JpaRepository<Scrapping,Long> {
+public interface ScrappingRepository extends JpaRepository<Scrapping,Long> {
 
-  Optional<List<Scrapping>> findByURL(String Url);
+   Optional<List<Scrapping>> findByURL(String Url);
 
 }
