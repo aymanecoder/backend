@@ -2,12 +2,12 @@ spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/java_db
-    username: aymane
-    password: root
+    username: root
+    password:
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
 
 server:
-  port : 8081
+  port : 8082

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class LoginController {
@@ -19,16 +20,14 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@Validated @RequestBody User user) {
-        List<User> users = userRepository.findAll();
 
-        for (User other : users) {
-            if (other.equals(users)) {
-                userRepository.save(user);
-                return "success";
-            }
+        Optional<User> result = userRepository.findByEmail(user.getEmail());
+        if (result.isPresent()) {
+            return "Succes";
+
+        } else {
+            return "error";
         }
-        return "error";
-
     }
 
 }

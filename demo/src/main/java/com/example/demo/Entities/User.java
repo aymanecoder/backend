@@ -1,11 +1,14 @@
 package com.example.demo.Entities;
-import lombok.Data;
+import lombok.*;
 
 import jakarta.persistence.*;
 
 import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = {"email"}),
@@ -17,15 +20,6 @@ public class User {
     private long id;
     private String email;
     private String password;
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return Objects.equals(email, user.email) &&
-                Objects.equals(password, user.password);
-    }
-
 
 
 }
