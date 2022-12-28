@@ -23,7 +23,7 @@ public class LoginController {
 
         Optional<User> result = userRepository.findByEmail(user.getEmail());
         if (result.isPresent()) {
-            return "Succes";
+            return null;
 
         } else {
             return "error";
