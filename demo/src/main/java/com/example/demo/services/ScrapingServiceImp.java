@@ -13,6 +13,7 @@ public class ScrapingServiceImp implements ScrapingService{
     private ScrappingRepository scrapingRepository;
     @Override
     public List<Scrapping> fetchScrapingList() {
+//        System.out.println(scrapingRepository.findAll());
         return scrapingRepository.findAll();
     }
 }
